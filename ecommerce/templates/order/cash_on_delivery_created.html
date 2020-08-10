@@ -1,0 +1,16 @@
+{% extends "ecommerce/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CASH ON DELIVERY Order Created</title>
+</head>
+<body>
+{% block content %}
+    <div class="container">
+        <h6> your order have been successfully created, your order Id is  {{order.id}}</h6>
+        <a href="{% url 'ecommerce:index' %}"> Back to shop </a>
+    </div>
+{% endblock %}
+</body>
+</html>S
