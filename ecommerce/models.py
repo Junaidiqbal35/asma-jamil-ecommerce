@@ -19,6 +19,9 @@ class Product(models.Model):
     author = models.PositiveIntegerField()
     featured_image = models.CharField(max_length=300)
 
+    def __str__(self):
+        return self.name
+
 
 class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

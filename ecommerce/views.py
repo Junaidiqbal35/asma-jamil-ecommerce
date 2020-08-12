@@ -16,8 +16,15 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.template.defaulttags import register
 from django.views.decorators.csrf import csrf_exempt
 
+
+from django.shortcuts import render
+
+# Create your views here.
+from django.contrib.admin.views.decorators import staff_member_required
+from django.shortcuts import get_object_or_404
+
 from orders.forms import OrderCreateForm
-from orders.models import Order
+from orders.models import Order, OrderItem
 from .apps import EcommerceConfig
 from .forms import *
 from .helpers import Helpers
@@ -693,9 +700,6 @@ def checkout_cash_on_delivery(request):
     products = Product.objects.filter(pk__in=item_ids)
 
     cart_total = 0
-    for item in products:
-        cart_item = cart_items["cart"].get(str(item.id))
-        cart_total = (item.price * cart_item.get("quantity")) + cart_total
 
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
@@ -703,6 +707,18 @@ def checkout_cash_on_delivery(request):
             order = form.save(commit=False)
             order.payment_method = 'COD'
             order.save()
+            for item in products:
+                cart_item = cart_items["cart"].get(str(item.id))
+
+                cart_total = (item.price * cart_item.get("quantity")) + cart_total
+                quantity = cart_item.get("quantity")
+                price = item.price * quantity
+                OrderItem.objects.create(order=order,
+                                         product=item,
+                                         quantity=quantity,
+                                         price=price)
+                # clear the cart
+
             request.session['order_id'] = order.id
             return redirect('ecommerce:cash_on_delivery_created')
         else:
@@ -729,9 +745,6 @@ def checkout_paypal(request):
     products = Product.objects.filter(pk__in=item_ids)
 
     cart_total = 0
-    for item in products:
-        cart_item = cart_items["cart"].get(str(item.id))
-        cart_total = (item.price * cart_item.get("quantity")) + cart_total
 
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
@@ -739,6 +752,15 @@ def checkout_paypal(request):
             order = form.save(commit=False)
             order.payment_method = 'PAYPAL'
             order.save()
+            for item in products:
+                cart_item = cart_items["cart"].get(str(item.id))
+                cart_total = (item.price * cart_item.get("quantity")) + cart_total
+                quantity = cart_item.get("quantity")
+                price = item.price * quantity
+                OrderItem.objects.create(order=order,
+                                         product=item,
+                                         quantity=quantity,
+                                         price=price)
             request.session['order_id'] = order.id
             return redirect('ecommerce:proceed-to-pay')
 
@@ -833,3 +855,4 @@ def proceed_to_pay(request):
                   {'cart_session_items': cart_items["cart"], 'cart_db_items': products,
                    'cart_total': float("%0.2f" % (cart_total)), 'currency': EcommerceConfig.currency,
                    'paypal_key': client_token})
+
