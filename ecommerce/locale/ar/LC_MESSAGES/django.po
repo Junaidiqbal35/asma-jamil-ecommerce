@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-20 04:16-0700\n"
+"POT-Creation-Date: 2020-08-20 11:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,7 +128,6 @@ msgid "Image"
 msgstr "صورة"
 
 #: .\ecommerce\models.py:41
-
 msgid "Images"
 msgstr "الصور"
 
@@ -161,10 +160,12 @@ msgid "All products"
 msgstr "جميع المنتجات"
 
 #: .\ecommerce\templates\ecommerce\product\create.html:19
+#: .\ecommerce\templates\ecommerce\product\update.html:20
 msgid "Description"
 msgstr "وصف"
 
 #: .\ecommerce\templates\ecommerce\product\create.html:23
+#: .\ecommerce\templates\ecommerce\product\update.html:24
 msgid "Short Description"
 msgstr "وصف قصير"
 
@@ -247,9 +248,14 @@ msgid "My Products"
 msgstr "منتجاتي"
 
 #: .\ecommerce\templates\ecommerce\product\update.html:7
-
 msgid "View Product"
 msgstr "عرض المنتج"
+
+#: .\ecommerce\templates\ecommerce\product\update.html:28
+#, fuzzy
+#| msgid "Images"
+msgid "Upload Images"
+msgstr "الصور"
 
 #: .\ecommerce\templates\ecommerce\product\update.html:52
 msgid "No images found"
