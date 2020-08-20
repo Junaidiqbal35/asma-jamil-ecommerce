@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-19 04:23-0700\n"
+"POT-Creation-Date: 2020-08-20 04:16-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,57 +63,85 @@ msgstr "رقم الهاتف"
 msgid "About"
 msgstr "حول"
 
+#: .\ecommerce\models.py:12
+msgid "Member"
+msgstr "عضو"
+
 #: .\ecommerce\models.py:13
+msgid "Members"
+msgstr "أفراد"
+
+#: .\ecommerce\models.py:17
 #: .\ecommerce\templates\ecommerce\product\create.html:15
 #: .\ecommerce\templates\ecommerce\product\update.html:16
 msgid "Name"
 msgstr "اسم"
 
-#: .\ecommerce\models.py:14
+#: .\ecommerce\models.py:18
 msgid "Content"
 msgstr "المحتوى"
 
-#: .\ecommerce\models.py:15
+#: .\ecommerce\models.py:19
 msgid "Excerpt"
 msgstr "مقتطفات"
 
-#: .\ecommerce\models.py:16 .\ecommerce\templates\ecommerce\index.html:45
+#: .\ecommerce\models.py:20 .\ecommerce\templates\ecommerce\index.html:45
 #: .\ecommerce\templates\ecommerce\product\create.html:29
 #: .\ecommerce\templates\ecommerce\product\update.html:59
 msgid "Price"
 msgstr "السعر"
 
-#: .\ecommerce\models.py:17
+#: .\ecommerce\models.py:21
 #: .\ecommerce\templates\ecommerce\product\create.html:38
 #: .\ecommerce\templates\ecommerce\product\update.html:68
 msgid "Status"
 msgstr "الحالة"
 
-#: .\ecommerce\models.py:18
+#: .\ecommerce\models.py:22
 msgid "Date"
 msgstr "تاريخ"
 
-#: .\ecommerce\models.py:19
+#: .\ecommerce\models.py:23
 #: .\ecommerce\templates\ecommerce\product\create.html:42
 #: .\ecommerce\templates\ecommerce\product\update.html:72
 msgid "Quantity"
 msgstr "كمية"
 
-#: .\ecommerce\models.py:20
+#: .\ecommerce\models.py:24
 msgid "Author"
 msgstr "مؤلف"
 
-#: .\ecommerce\models.py:21
+#: .\ecommerce\models.py:25
 msgid "Featured_image"
 msgstr "صورة مميزة"
 
-#: .\ecommerce\models.py:28
+#: .\ecommerce\models.py:31 .\ecommerce\models.py:36
 msgid "Product"
 msgstr "المنتج"
 
-#: .\ecommerce\models.py:29
+#: .\ecommerce\models.py:32
+msgid "Products"
+msgstr "منتجات"
+
+#: .\ecommerce\models.py:37 .\ecommerce\models.py:40
 msgid "Image"
 msgstr "صورة"
+
+#: .\ecommerce\models.py:41
+
+msgid "Images"
+msgstr "الصور"
+
+#: .\ecommerce\templates\ecommerce\base.html:46
+#: .\ecommerce\templates\ecommerce\user\register.html:11
+#: .\ecommerce\templates\ecommerce\user\register.html:56
+msgid "Register"
+msgstr "تسجيل"
+
+#: .\ecommerce\templates\ecommerce\base.html:47
+#: .\ecommerce\templates\ecommerce\user\login.html:9
+msgid "Login"
+msgstr "تسجيل الدخول"
 
 #: .\ecommerce\templates\ecommerce\contact.html:15
 msgid "E-Mail Address"
@@ -144,10 +172,41 @@ msgstr "وصف قصير"
 msgid "Submit"
 msgstr "إرسال"
 
+#: .\ecommerce\templates\ecommerce\product\index.html:13
+#: .\ecommerce\templates\ecommerce\product\index.html:42
+msgid "Filter"
+msgstr "منقي"
+
+#: .\ecommerce\templates\ecommerce\product\index.html:17
+msgid "Enter a keyword"
+msgstr "أدخل كلمة رئيسية"
+
+#: .\ecommerce\templates\ecommerce\product\index.html:20
+msgid "Per Page"
+msgstr "لكل صفحة"
+
+#: .\ecommerce\templates\ecommerce\product\index.html:28
+msgid "Order By"
+msgstr "ترتيب حسب"
+
+#: .\ecommerce\templates\ecommerce\product\index.html:36
+msgid "Sorting"
+msgstr "فرز"
+
+#: .\ecommerce\templates\ecommerce\product\index.html:38
+msgid "Ascending"
+msgstr "تصاعدي"
+
+#: .\ecommerce\templates\ecommerce\product\index.html:39
+msgid "Descending"
+msgstr "تنازلي"
+
+#: .\ecommerce\templates\ecommerce\product\index.html:52
 #: .\ecommerce\templates\ecommerce\product\single.html:11
 msgid "Item successfully removed from cart"
 msgstr "تمت إزالة العنصر بنجاح من سلة التسوق"
 
+#: .\ecommerce\templates\ecommerce\product\index.html:54
 #: .\ecommerce\templates\ecommerce\product\single.html:13
 msgid "Item successfully added to cart"
 msgstr "تمت إضافة العنصر إلى سلة التسوق بنجاح"
@@ -175,8 +234,6 @@ msgstr "تاجر"
 
 #: .\ecommerce\templates\ecommerce\product\single.html:84
 #: .\ecommerce\templates\ecommerce\user\register.html:20
-#, fuzzy
-#| msgid "email"
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
@@ -186,13 +243,11 @@ msgstr "هاتف"
 
 #: .\ecommerce\templates\ecommerce\product\update.html:6
 #, fuzzy
-#| msgid "Product"
 msgid "My Products"
 msgstr "منتجاتي"
 
 #: .\ecommerce\templates\ecommerce\product\update.html:7
-#, fuzzy
-#| msgid "Product"
+
 msgid "View Product"
 msgstr "عرض المنتج"
 
@@ -203,10 +258,6 @@ msgstr "لم يتم العثور على صور"
 #: .\ecommerce\templates\ecommerce\product\update.html:75
 msgid "Update"
 msgstr "تحديث"
-
-#: .\ecommerce\templates\ecommerce\user\login.html:9
-msgid "Login"
-msgstr "تسجيل الدخول"
 
 #: .\ecommerce\templates\ecommerce\user\login.html:15
 #: .\ecommerce\templates\ecommerce\user\register.html:14
@@ -226,11 +277,6 @@ msgstr "تسجيل الدخول"
 msgid "or Register"
 msgstr "تسجيل"
 
-#: .\ecommerce\templates\ecommerce\user\register.html:11
-#: .\ecommerce\templates\ecommerce\user\register.html:56
-msgid "Register"
-msgstr "تسجيل"
-
 #: .\ecommerce\templates\ecommerce\user\register.html:32
 msgid "Confirm Password"
 msgstr "تأكيد كلمة المرور"
@@ -242,6 +288,22 @@ msgstr "الاسم الاول"
 #: .\ecommerce\templates\ecommerce\user\register.html:44
 msgid "Last Name"
 msgstr "الكنية"
+
+#: .\ecommerce\templates\order\paypal_checkout.html:145
+msgid "I have read and accept the"
+msgstr "قرأت وأقبل ب"
+
+#: .\ecommerce\templates\order\paypal_checkout.html:146
+msgid "terms & conditions"
+msgstr "البنود و الظروف"
+
+#: .\ecommerce\templates\order\paypal_checkout.html:147
+msgid "Paypal Payment"
+msgstr "الدفع باي بال"
+
+#: .\ecommerce\templates\order\proceed_to_pay.html:44
+msgid "pay now"
+msgstr "ادفع الآن"
 
 #~ msgid "English"
 #~ msgstr "الإنجليزية"

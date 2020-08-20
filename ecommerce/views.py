@@ -694,10 +694,10 @@ def checkout_cash_on_delivery(request):
 
     cart_total = 0
     for item in products:
-                cart_item = cart_items["cart"].get(str(item.id))
-                cart_total = (item.price * cart_item.get("quantity")) + cart_total
-                quantity = cart_item.get("quantity")
-                price = item.price * quantity
+        cart_item = cart_items["cart"].get(str(item.id))
+        cart_total = (item.price * cart_item.get("quantity")) + cart_total
+        quantity = cart_item.get("quantity")
+        price = item.price * quantity
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
         if form.is_valid():
@@ -725,7 +725,7 @@ def checkout_cash_on_delivery(request):
     # return HttpResponse(result)
     return render(request, 'order/cash_on_delivery_checkout.html',
                   {'cart_session_items': cart_items["cart"], 'cart_db_items': products,
-                   'cart_total':  cart_total, 'currency': EcommerceConfig.currency,
+                   'cart_total': cart_total, 'currency': EcommerceConfig.currency,
                    'form': form})
 
 
@@ -749,10 +749,10 @@ def checkout_paypal(request):
 
     cart_total = 0
     for item in products:
-                cart_item = cart_items["cart"].get(str(item.id))
-                cart_total = (item.price * cart_item.get("quantity")) + cart_total
-                quantity = cart_item.get("quantity")
-                price = item.price * quantity
+        cart_item = cart_items["cart"].get(str(item.id))
+        cart_total = (item.price * cart_item.get("quantity")) + cart_total
+        quantity = cart_item.get("quantity")
+        price = item.price * quantity
 
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)

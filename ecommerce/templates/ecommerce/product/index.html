@@ -1,5 +1,5 @@
 {% extends "ecommerce/base.html" %}
-
+{% load i18n %}
 {% block content %}
 	<div class="container-fluid">
 		{% csrf_token %}
@@ -10,14 +10,14 @@
 		<div class="row">
 			<div class="col-md-3">
 				<div class="card">
-					<div class="card-header">Filter</div>
+					<div class="card-header">{% trans "Filter" %}</div>
 					<div class="card-body">
 						<div class="form-group">
 							<label>البحث: </label>
-							<input type="text" class="form-control post_search_text" placeholder="Enter a keyword" />
+							<input type="text" class="form-control post_search_text" placeholder="{% trans 'Enter a keyword' %}" />
 						</div>
 						<div class="form-group">
-							<label>Per Page: </label>
+							<label>{% trans "Per Page" %}: </label>
 							<select class="form-control post_max">
 								<option value="4">4</option>
 								<option value="8" selected>8</option>
@@ -25,7 +25,7 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label>Order By: </label>
+							<label>{% trans "Order By" %}: </label>
 							<select class="form-control post_name">
 								<option value="name">اسم المنتج</option>
 								<option value="price">السعر</option>
@@ -33,13 +33,13 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label>Sorting: </label>
+							<label>{% trans "Sorting" %}: </label>
 							<select class="form-control post_sort">
-								<option value="ASC">Ascending</option>
-								<option value="DESC">Descending</option>
+								<option value="ASC">{% trans "Ascending" %}</option>
+								<option value="DESC">{% trans "Descending" %}</option>
 							</select>
 						</div>
-						<input type = "submit" value = "Filter" class = "btn btn-primary btn-block post_search_submit" />
+						<input type = "submit" value = "{% trans 'Filter' %}" class = "btn btn-primary btn-block post_search_submit" />
 						
 					</div>
 				</div>
@@ -49,9 +49,9 @@
 				{% if request.GET.cart %}
 					<div class="alert alert-success">
 						{% if request.GET.cart == '0' %}
-							Item successfully removed from cart
+						{% trans "Item successfully removed from cart" %}
 						{% else %}
-							Item successfully added to cart
+							{% trans "Item successfully added to cart" %}
 						{% endif %}
 					</div>
 				{% endif %}

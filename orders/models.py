@@ -50,3 +50,7 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return '{}'.format(self.id)
+
+    class Meta:
+        verbose_name = _("Order Items")
+

@@ -1,5 +1,6 @@
 {% load static %}<!DOCTYPE html>
-<html lang="en">
+{% load i18n %}
+<html lang="">
 <head>
 	<title>Infinity market</title>
 	
@@ -42,8 +43,8 @@
 					<li class="nav-item"><a class="nav-link" href="/ecommerce/cart">السلة</a></li>
 				{% else %}
 					<li class="nav-item"><a class="nav-link" href="/ecommerce/cart">السلة</a></li>
-					<li class="nav-item"><a class="nav-link" href="/ecommerce/user/register">Register</a></li>
-					<li class="nav-item"><a class="nav-link" href="/ecommerce/user/login">Login</a></li>
+					<li class="nav-item"><a class="nav-link" href="/ecommerce/user/register">{% trans "Register" %}</a></li>
+					<li class="nav-item"><a class="nav-link" href="/ecommerce/user/login">{% trans "Login" %}</a></li>
 				{% endif %}
 			</ul>
 		</div>

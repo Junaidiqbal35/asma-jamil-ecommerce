@@ -100,7 +100,7 @@ MESSAGE_TAGS = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ar-eg'
 
 TIME_ZONE = 'UTC'
 
@@ -113,7 +113,6 @@ USE_TZ = True
 # language setting
 
 LANGUAGES = (
-    ('en', _('English')),
     ('ar', _('Arabic')),
 )
 LOCALE_PATHS = (

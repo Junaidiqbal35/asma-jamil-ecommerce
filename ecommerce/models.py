@@ -8,6 +8,10 @@ class Member(models.Model):
     phone_number = models.CharField(verbose_name=_("Phone Number"), max_length=30)
     about = models.TextField(verbose_name=_("About"))
 
+    class Meta:
+        verbose_name = _("Member")
+        verbose_name_plural = _("Members")
+
 
 class Product(models.Model):
     name = models.CharField(verbose_name=_("Name"), max_length=200)
@@ -23,7 +27,15 @@ class Product(models.Model):
     def __str__(self):
         return _(self.name)
 
+    class Meta:
+        verbose_name = _("Product")
+        verbose_name_plural = _("Products")
+
 
 class Image(models.Model):
     product = models.ForeignKey(Product, verbose_name=_("Product"), on_delete=models.CASCADE)
     image = models.ImageField(verbose_name=_("Image"))
+
+    class Meta:
+        verbose_name = _("Image")
+        verbose_name_plural = _("Images")
